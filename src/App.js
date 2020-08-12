@@ -6,8 +6,14 @@ import { MetalData, renderMetalTitle } from './metal-data';
 import Autocomplete from 'react-autocomplete';
 
 class App extends Component {
-  state = { val: '' };
+  state = { val: '',data:[] };
 
+
+  componentDidMount(){
+    fetch('http://localhost:3000/api/sendData')
+    .then(response => response.json())
+    .then(data => this.setState({ data:data })); 
+  }
 
   render() {
     return (
@@ -20,7 +26,7 @@ class App extends Component {
                 <div class="main">
                   <Autocomplete
                     value={this.state.val}
-                    items={MetalData()}
+                    items={this.state.data}
                     getItemValue={item => item.title}
                     shouldItemRender={renderMetalTitle}
                     renderMenu={item => (
