@@ -4,16 +4,9 @@ import './bootstrap.css';
 import React, { Component } from 'react';
 import { MetalData, renderMetalTitle } from './metal-data';
 import Autocomplete from 'react-autocomplete';
-
+import ServerAutoSuggest from './server.autosuggest';
 class App extends Component {
-  state = { val: '',data:[] };
-
-
-  componentDidMount(){
-    fetch('http://localhost:3000/api/sendData')
-    .then(response => response.json())
-    .then(data => this.setState({ data:data })); 
-  }
+  // state = { val: '', data: [] };
 
   render() {
     return (
@@ -24,9 +17,9 @@ class App extends Component {
               <img src={logo} className="App-logo" alt="logo" />
               <p>
                 <div class="main">
-                  <Autocomplete
+                  {/* <Autocomplete
                     value={this.state.val}
-                    items={this.state.data}
+                    items={this.getSuggestions(this.state.val)}
                     getItemValue={item => item.title}
                     shouldItemRender={renderMetalTitle}
                     renderMenu={item => (
@@ -41,7 +34,9 @@ class App extends Component {
                     }
                     onChange={(event, val) => this.setState({ val })}
                     onSelect={val => this.setState({ val })}
-                  />
+                  /> */}
+                  <ServerAutoSuggest />
+
                 </div>
               </p>
             </header>

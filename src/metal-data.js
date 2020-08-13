@@ -1,4 +1,5 @@
 export function MetalData() {
+
     return [{
         "title": "<a href='https://www.metal-archives.com/bands/Ritual_Crypt/3540303557'>Ritual Crypt</a>",
         "country": "Indonesia",
