@@ -13,11 +13,11 @@ class App extends Component {
           <div className="col-md-12 main-container"><h2>The Best Metal-Archives Searcher</h2>
             <header className="App-header">
               <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                <div class="main">
-                  <ServerAutoSuggest />
-                </div>
-              </p>
+
+              <div className="main">
+                <ServerAutoSuggest />
+              </div>
+
             </header>
           </div>
         </div>
