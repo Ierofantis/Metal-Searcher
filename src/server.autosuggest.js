@@ -16,9 +16,7 @@ class ServerAutoSuggest extends React.Component {
 
     // Filter logic
     getSuggestions = async (value) => {
-        //http://localhost:3000/api/sendData?band=<a href='https://www.metal-archives.com/bands/Ahilless/3540418631'>Ahilless</a>
         const inputValue = value.trim().toLowerCase();
-        const inputLength = inputValue.length;
 
         let response = await fetch("http://localhost:3000/api/autosearch/" + inputValue);
 

@@ -15,26 +15,7 @@ class App extends Component {
               <img src={logo} className="App-logo" alt="logo" />
               <p>
                 <div class="main">
-                  {/* <Autocomplete
-                    value={this.state.val}
-                    items={this.getSuggestions(this.state.val)}
-                    getItemValue={item => item.title}
-                    shouldItemRender={renderMetalTitle}
-                    renderMenu={item => (
-                      <div className="dropdown">
-                        {item}
-                      </div>
-                    )}
-                    renderItem={(item, isHighlighted) =>
-                      <div className={`item ${isHighlighted ? 'selected-item' : ''}`}>
-                        <div className="metal-link" dangerouslySetInnerHTML={{ __html: item.title }} />
-                      </div>
-                    }
-                    onChange={(event, val) => this.setState({ val })}
-                    onSelect={val => this.setState({ val })}
-                  /> */}
                   <ServerAutoSuggest />
-
                 </div>
               </p>
             </header>
