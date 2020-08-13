@@ -2,11 +2,9 @@ import logo from './pentagram.png';
 import './App.css';
 import './bootstrap.css';
 import React, { Component } from 'react';
-import { MetalData, renderMetalTitle } from './metal-data';
-import Autocomplete from 'react-autocomplete';
 import ServerAutoSuggest from './server.autosuggest';
+
 class App extends Component {
-  // state = { val: '', data: [] };
 
   render() {
     return (

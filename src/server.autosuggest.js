@@ -24,9 +24,7 @@ class ServerAutoSuggest extends React.Component {
 
         let data = await response.json()
         return data;
-        // return inputLength === 0 ? [] : data.filter(lang =>
-        //     lang.title.toLowerCase().slice(0, inputLength) === inputValue
-        // );
+
     };
 
     // Trigger suggestions
@@ -36,7 +34,7 @@ class ServerAutoSuggest extends React.Component {
     renderSuggestion = suggestion => (
         <span className="sugg-option">
             <span className="name">
-                {suggestion.title}
+                <div className="metal-link" dangerouslySetInnerHTML={{ __html: suggestion.title }} />
             </span>
         </span>
     );
