@@ -18,7 +18,7 @@ class ServerAutoSuggest extends React.Component {
     getSuggestions = async (value) => {
         const inputValue = value.trim().toLowerCase();
 
-        let response = await fetch("http://localhost:3000/api/autosearch/" + inputValue);
+        let response = await fetch("https://super-archives.herokuapp.com/api/autosearch/" + inputValue);
 
         let data = await response.json()
         return data;
