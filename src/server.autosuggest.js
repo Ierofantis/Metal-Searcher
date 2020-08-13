@@ -23,10 +23,10 @@ class ServerAutoSuggest extends React.Component {
         let response = await fetch("http://localhost:3000/api/autosearch/" + inputValue);
 
         let data = await response.json()
-        // return data;
-        return inputLength === 0 ? [] : data.filter(lang =>
-            lang.title.toLowerCase().slice(0, inputLength) === inputValue
-        );
+        return data;
+        // return inputLength === 0 ? [] : data.filter(lang =>
+        //     lang.title.toLowerCase().slice(0, inputLength) === inputValue
+        // );
     };
 
     // Trigger suggestions
@@ -58,7 +58,7 @@ class ServerAutoSuggest extends React.Component {
                     });
                 } else {
                     this.setState({
-                        suggestions: data.title
+                        suggestions: data
                     });
                 }
             })
