@@ -72,7 +72,7 @@ class ServerAutoSuggest extends React.Component {
 
         // Option props
         const inputProps = {
-            placeholder: 'Type movie name',
+            placeholder: `Type band's name`,
             value,
             onChange: this.onChange
         };
