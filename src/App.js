@@ -12,14 +12,13 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const url = axios.create({
-    baseURL: 'http://localhost:8080/',
+    baseURL: 'https://super-archives.herokuapp.com/',
   });
 
   const getApiSuggestions = (word) => {
     let result = url
       .get(`api/autosearch/${word}`)
       .then((response) => {
-        console.log(response.data)
         return response.data;
       })
       .catch((error) => {
