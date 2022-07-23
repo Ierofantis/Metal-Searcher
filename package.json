@@ -4,7 +4,7 @@
   "private": true,
   "engines": {
     "node": "16.16.0"
-  }
+  },
   "dependencies": {
     "cra-template": "1.0.3",
     "lodash": "^4.17.21",
