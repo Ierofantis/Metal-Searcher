@@ -50,3 +50,15 @@
 .metal-link {
   color: black;
 }
+
+a {
+  color: red;
+}
+
+a:hover {
+  color: blue;
+}
+
+.nav a {
+  color: green;
+}

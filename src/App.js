@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="App container  ">
       <div className="row">
-        <div className="col-md-12 main-container"><h2>The Best Metal-Archives Searcher</h2>
+        <div className="col-md-12 main-container"><h2><a href="https://www.metal-archives.com/" target="_blank">The Best Metal-Archives Searcher</a></h2>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
 
