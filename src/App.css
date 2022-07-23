@@ -32,20 +32,21 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 .main {
-  padding-top:80px;
+  padding-top: 80px;
 }
 
 .main-container {
-  background-color:#000;
-  color:#e2d8cf;
+  background-color: #000;
+  color: #e2d8cf;
 }
 
-.metal-link{
-  color:black;
+.metal-link {
+  color: black;
 }

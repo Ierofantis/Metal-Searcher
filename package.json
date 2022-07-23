@@ -4,11 +4,12 @@
   "private": true,
   "dependencies": {
     "cra-template": "1.0.3",
+    "lodash": "^4.17.21",
     "react": "^16.13.1",
     "react-autocomplete": "^1.8.1",
     "react-autosuggest": "^10.0.2",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "^3.4.1",
     "react-search": "^2.1.1"
   },
   "scripts": {

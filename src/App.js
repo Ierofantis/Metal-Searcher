@@ -1,29 +1,67 @@
+import React, { useState, useEffect } from 'react';
 import logo from './pentagram.png';
 import './App.css';
 import './bootstrap.css';
-import React, { Component } from 'react';
-import ServerAutoSuggest from './server.autosuggest';
 
-class App extends Component {
+import SearchInput from './SearchInput';
+import { MainWrapper } from './SearchInputStyle';
+import axios from 'axios';
 
-  render() {
-    return (
-      <div className="App container  ">
-        <div className="row">
-          <div className="col-md-12 main-container"><h2>The Best Metal-Archives Searcher</h2>
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
+function App() {
+  const [options, setOptions] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-              <div className="main">
-                <ServerAutoSuggest />
-              </div>
+  const url = axios.create({
+    baseURL: 'http://localhost:8080/',
+  });
 
-            </header>
-          </div>
+  const getApiSuggestions = (word) => {
+    let result = url
+      .get(`api/autosearch/${word}`)
+      .then((response) => {
+        console.log(response.data)
+        return response.data;
+      })
+      .catch((error) => {
+        return error;
+      });
+
+    return result;
+  };
+  const getSuggestions = async (word) => {
+    if (word) {
+      setLoading(true);
+      let response = await getApiSuggestions(word);
+      setOptions(response);
+      setLoading(false);
+    } else {
+      setOptions([]);
+    }
+  };
+
+
+  return (
+    <div className="App container  ">
+      <div className="row">
+        <div className="col-md-12 main-container"><h2>The Best Metal-Archives Searcher</h2>
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+
+            <div className="main">
+              <SearchInput
+                loading={loading}
+                options={options}
+                requests={getSuggestions}
+
+                placeholder="Find your favorite metal band"
+              />
+            </div>
+
+          </header>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default App;
