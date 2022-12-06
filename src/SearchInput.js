@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import debounce from 'lodash.debounce';
 
 import { Input, Ul, Li, SuggestContainer } from './SearchInputStyle';
+import ReactTooltip from 'react-tooltip';
 
 export default function SearchInput({
     loading,
@@ -41,7 +42,8 @@ export default function SearchInput({
                             key={index}
 
                         >
-                            <div className="metal-link" dangerouslySetInnerHTML={{ __html: option.title }} />
+                            <div data-tip='' data-for={option.title} className="metal-link" dangerouslySetInnerHTML={{ __html: option.title }} />
+                            <ReactTooltip id={option.title} >{option.genre} from {option.country}</ReactTooltip>
                         </Li>
                     ))}
 
