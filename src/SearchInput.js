@@ -40,9 +40,8 @@ export default function SearchInput({
                     {options.map((option, index) => (
                         <Li
                             key={index}
-
                         >
-                            <div data-tip='' data-for={option.title} className="metal-link" dangerouslySetInnerHTML={{ __html: option.title }} />
+                            <div data-tip='' data-for={option.title} className="metal-link" dangerouslySetInnerHTML={{ __html: option.band_url }} />
                             <ReactTooltip id={option.title} >{option.genre} from {option.country}</ReactTooltip>
                         </Li>
                     ))}
